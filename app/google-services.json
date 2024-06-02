@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "831994712141",
+    "project_id": "deleveryapp-65c8a",
+    "storage_bucket": "deleveryapp-65c8a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831994712141:android:726ce01bff4e7f34ec8c04",
+        "android_client_info": {
+          "package_name": "com.equipouno.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3PZaNQpUjWfs3oOwqUkSo-2I6BnqcuDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
