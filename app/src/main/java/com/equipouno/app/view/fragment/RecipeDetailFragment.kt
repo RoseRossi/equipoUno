@@ -19,8 +19,22 @@ class RecipeDetailFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Obtén una referencia al título del botón desplegable
+        val collapsibleTitle = binding.collapsibleTitle
+
+        // Agrega un OnClickListener al título
+        collapsibleTitle.setOnClickListener {
+            // Cambia la visibilidad del contenido cuando se haga clic
+            val collapsibleContent = binding.collapsibleContent
+            collapsibleContent.visibility = if (collapsibleContent.visibility == View.VISIBLE) {
+                View.GONE
+            } else {
+                View.VISIBLE
+            }
+        }
     }
+
 }
