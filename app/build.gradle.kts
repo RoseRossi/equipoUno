@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.firebase.database.ktx)
     val navVersion = "2.3.5"
 
     implementation(libs.androidx.core.ktx)
