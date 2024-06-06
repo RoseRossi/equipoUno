@@ -8,7 +8,7 @@ import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.bumptech.glide.Glide
+//import com.bumptech.glide.Glide
 import com.equipouno.app.databinding.FragmentRecipeDetailBinding
 import com.equipouno.app.viewmodel.RecipeViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,33 +38,33 @@ class RecipeDetailFragment : Fragment() {
         viewModel.loadRecipe(recipeId, appId, appKey)
 
         // Observa los datos de la receta
-        viewModel.recipe.observe(viewLifecycleOwner, Observer { recipe ->
-            recipe?.let {
-                binding.toolbarTitle.text = it.name
-                binding.descriptionText.text = it.nutritionEstimates?.joinToString("\n") { estimate ->
-                    "${estimate.description}: ${estimate.value} ${estimate.unit.abbreviation}"
-                }
-                binding.collapsibleContent.removeAllViews()
-                it.ingredientLines.forEach { ingredient ->
-                    val checkBox = CheckBox(context).apply {
-                        text = ingredient
-                    }
-                    binding.collapsibleContent.addView(checkBox)
-                }
-                // Usa Glide para cargar la imagen
-                if (it.images.isNotEmpty()) {
-                    Glide.with(this).load(it.images.first().hostedLargeUrl).into(binding.recipeImage)
-                }
-
-                binding.collapsibleTitle.setOnClickListener {
-                    binding.collapsibleContent.visibility = if (binding.collapsibleContent.visibility == View.VISIBLE) {
-                        View.GONE
-                    } else {
-                        View.VISIBLE
-                    }
-                }
-            }
-        })
+//        viewModel.recipe.observe(viewLifecycleOwner, Observer { recipe ->
+//            recipe?.let {
+//                binding.toolbarTitle.text = it.name
+//                binding.descriptionText.text = it.nutritionEstimates?.joinToString("\n") { estimate ->
+//                    "${estimate.description}: ${estimate.value} ${estimate.unit.abbreviation}"
+//                }
+//                binding.collapsibleContent.removeAllViews()
+//                it.ingredientLines.forEach { ingredient ->
+//                    val checkBox = CheckBox(context).apply {
+//                        text = ingredient
+//                    }
+//                    binding.collapsibleContent.addView(checkBox)
+//                }
+//                // Usa Glide para cargar la imagen
+//                if (it.images.isNotEmpty()) {
+//                    Glide.with(this).load(it.images.first().hostedLargeUrl).into(binding.recipeImage)
+//                }
+//
+//                binding.collapsibleTitle.setOnClickListener {
+//                    binding.collapsibleContent.visibility = if (binding.collapsibleContent.visibility == View.VISIBLE) {
+//                        View.GONE
+//                    } else {
+//                        View.VISIBLE
+//                    }
+//                }
+//            }
+//        })
 
         // Configura el icono de retroceso
         /*binding.backIcon.setOnClickListener {
