@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.equipouno.app.R
 import com.equipouno.app.databinding.FragmentDeleveryFavBinding
 import com.equipouno.app.databinding.FragmentTypesFoodBinding
@@ -23,5 +24,13 @@ class TypesFoodFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
+        this.listeners()
+    }
+
+    private fun listeners()
+    {
+        binding.profileButton.setOnClickListener {
+            findNavController().navigate(R.id.action_typesFoodFragment_to_profileFragment)
+        }
     }
 }
