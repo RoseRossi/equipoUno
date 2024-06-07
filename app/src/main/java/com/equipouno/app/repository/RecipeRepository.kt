@@ -1,24 +1,57 @@
 package com.equipouno.app.repository
 
-import com.equipouno.app.api.ApiService
-import com.equipouno.app.api.RecipeResponse
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.equipouno.app.model.Recipe
+import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class RecipeRepository @Inject constructor(
-    private val apiService: ApiService,
-    firestore: FirebaseFirestore
+    private val firestore: FirebaseFirestore
 ) {
+    private val recipesCollection = firestore.collection("recipes")
 
-    suspend fun getRecipe(recipeId: String, appId: String, appKey: String): RecipeResponse? {
-        return withContext(Dispatchers.IO) {
-            try {
-                apiService.getRecipe(recipeId, appId, appKey)
-            } catch (e: Exception) {
-                null
-            }
+    suspend fun getAllRecipes(): List<Recipe> {
+        return try {
+            val snapshot = recipesCollection.get().await()
+            snapshot.toObjects(Recipe::class.java)
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
+    suspend fun getRecipeById(id: String): Recipe? {
+        return try {
+            val document = recipesCollection.document(id).get().await()
+            document.toObject(Recipe::class.java)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    suspend fun addRecipe(recipe: Recipe): Boolean {
+        return try {
+            recipesCollection.add(recipe).await()
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    suspend fun updateRecipe(recipe: Recipe): Boolean {
+        return try {
+            recipesCollection.document(recipe.id).set(recipe).await()
+            true
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    suspend fun deleteRecipe(id: String): Boolean {
+        return try {
+            recipesCollection.document(id).delete().await()
+            true
+        } catch (e: Exception) {
+            false
         }
     }
 }

@@ -4,73 +4,68 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import com.bumptech.glide.Glide
+//import androidx.navigation.fragment.navArgs
 import com.equipouno.app.databinding.FragmentRecipeDetailBinding
 import com.equipouno.app.viewmodel.RecipeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RecipeDetailFragment : Fragment() {
-    private lateinit var binding: FragmentRecipeDetailBinding
+
+    private var _binding: FragmentRecipeDetailBinding? = null
+    private val binding get() = _binding!!
     private val viewModel: RecipeViewModel by viewModels()
+    //private val args: RecipeDetailFragmentArgs by navArgs() // Para recibir los argumentos de navegación
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRecipeDetailBinding.inflate(inflater, container, false)
+        _binding = FragmentRecipeDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Obtén el ID de la receta desde los argumentos o cualquier otro método
-        val recipeId = "French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364" // Usa el ID real de la receta
-        val appId = "YOUR_ID"
-        val appKey = "YOUR_APP_KEY"
+        //val recipeId = args.recipeId // Obtén el ID de la receta de los argumentos de navegación
 
-        // Carga la receta
-        viewModel.loadRecipe(recipeId, appId, appKey)
-
-        // Observa los datos de la receta
-        viewModel.recipe.observe(viewLifecycleOwner, Observer { recipe ->
+        /*viewModel.getRecipeById(recipeId).observe(viewLifecycleOwner) { recipe ->
             recipe?.let {
-                binding.toolbarTitle.text = it.name
-                binding.descriptionText.text = it.nutritionEstimates?.joinToString("\n") { estimate ->
-                    "${estimate.description}: ${estimate.value} ${estimate.unit.abbreviation}"
-                }
-                binding.collapsibleContent.removeAllViews()
-                it.ingredientLines.forEach { ingredient ->
-                    val checkBox = CheckBox(context).apply {
+                binding.collapsibleContentIngredients.removeAllViews()
+                it.ingredients.forEach { ingredient ->
+                    val textView = TextView(context).apply {
                         text = ingredient
                     }
-                    binding.collapsibleContent.addView(checkBox)
-                }
-                // Usa Glide para cargar la imagen
-                if (it.images.isNotEmpty()) {
-                    Glide.with(this).load(it.images.first().hostedLargeUrl).into(binding.recipeImage)
+                    binding.collapsibleContentIngredients.addView(textView)
                 }
 
-                binding.collapsibleTitle.setOnClickListener {
-                    binding.collapsibleContent.visibility = if (binding.collapsibleContent.visibility == View.VISIBLE) {
-                        View.GONE
-                    } else {
-                        View.VISIBLE
+                binding.collapsibleContentSteps.removeAllViews()
+                it.steps.forEach { step ->
+                    val textView = TextView(context).apply {
+                        text = step
                     }
+                    binding.collapsibleContentSteps.addView(textView)
                 }
-            }
-        })
 
-        // Configura el icono de retroceso
-        /*binding.backIcon.setOnClickListener {
-            requireActivity().onBackPressed()
+                binding.descriptionText.text = it.description
+                binding.toolbarTitle.text = it.name
+            }
         }
 
          */
+
+        // Configurar el botón de Delivery
+        binding.deliveryButton.setOnClickListener {
+            // Acción cuando se presiona el botón de Delivery
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
