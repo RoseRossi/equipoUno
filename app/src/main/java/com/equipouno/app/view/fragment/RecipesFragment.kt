@@ -44,6 +44,7 @@ class RecipesFragment : Fragment() {
             val adapter = ListRecipesAdapter(recipes) { recipe ->
                 val bundle = Bundle().apply {
                     putString("recipeName", recipe.name)
+                    putString("recipeName", recipe.name)
                 }
                 Log.d("RecipesFragment", "Navigating to RecipeDetailFragment with recipeName: ${recipe.name}")
                 findNavController().navigate(R.id.action_recipesFragment_to_recipeDetailFragment, bundle)
