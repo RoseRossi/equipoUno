@@ -11,4 +11,9 @@ class RecipeListModel : ViewModel() {
     fun getRecipes(type: String): LiveData<List<Recipe>> {
         return repository.getRecipes(type)
     }
+
+    // Nueva función para obtener recetas favoritas
+    fun getFavoriteRecipes(): LiveData<List<Recipe>> {
+        return repository.getFavoriteRecipes()
+    }
 }

@@ -6,6 +6,6 @@ data class Recipe(
     val type: String = "",
     val ingredients: List<String> = emptyList(),
     val steps: List<String> = emptyList(),
-    val isFavorite: Boolean = false,
+    val favorite: Boolean = false,  // Cambiado de isFavorite a favorite
     val description: String = ""
 )
