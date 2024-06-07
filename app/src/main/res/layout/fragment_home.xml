@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:scaleType="fitXY"
-                tools:ignore="ContentDescription" tools:src="@drawable/bubbles"/>
+                tools:ignore="ContentDescription" android:src="@drawable/bubbles"/>
             <TextView
                 android:ellipsize="end"
                 android:id="@+id/uppertxtlogin"
@@ -100,7 +100,7 @@
                 android:layout_height="100dp"
                 android:paddingBottom="40dp"
                 android:scaleType="centerInside"
-                tools:src="@drawable/imgiconuser"/>
+                android:src="@drawable/imgiconuser"/>
         </FrameLayout>
 
         <Button
