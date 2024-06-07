@@ -14,4 +14,16 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="upperlogin">LOGIN</string>
+    <string name="upperreg">SIGN UP</string>
+    <string name="msgCorreo">Correo electronico:</string>
+    <string name="msgPassw">Contraseña:</string>
+    <string name="msgplainlogin">No tienes cuenta?</string>
+    <string name="msgplainreg">Ya tienes cuenta?</string>
+    <string name="txtbtsign_in">SIGN IN</string>
+    <string name="txtbtcrear_una_cuenta">Crear una cuenta</string>
+    <string name="txtbtinicia">Inicia sesion</string>
+    <string name="msgNombre">Nombre:</string>
+    <string name="msgPhone">Celular:</string>
+    <string name="msgAdds">Direccion:</string>
+    <string name="msgbornd">Fecha de nacimiento:</string>
 </resources>

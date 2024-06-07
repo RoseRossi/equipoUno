@@ -20,7 +20,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:scaleType="fitXY"
-                imageRes="@{@drawable/bubbles}"
                 tools:ignore="ContentDescription" tools:src="@drawable/bubbles"/>
             <TextView
                 android:ellipsize="end"
@@ -33,66 +32,108 @@
                 android:text="@string/upperlogin"
                 style="@style/txtConcertOneregular48" tools:text="@string/upperlogin" />
         </FrameLayout>
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/framecorreo"
             android:layout_gravity="center_horizontal"
-            android:layout_height="317dp"
+            android:layout_height="289dp"
             android:layout_width="283dp"
             android:layout_marginTop="72dp">
             <LinearLayout
                 android:id="@+id/linearcorreo"
-                android:layout_gravity="bottom|center"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="47dp"
                 android:paddingEnd="24dp"
                 android:paddingStart="24dp"
                 android:paddingTop="47dp"
-                style="@style/groupStyleblue_300cornerRadius"/>
-        </LinearLayout>
-    <EditText
-        android:id="@+id/emailEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Correo Electrónico"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                style="@style/groupStyleblue_300cornerRadius">
+                <TextView
+                    android:ellipsize="end"
+                    android:id="@+id/txtCorreo"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:singleLine="true"
+                    android:text="@string/msgCorreo"
+                    style="@style/txtConcertOneregular16" tools:text="@string/msgCorreo"/>
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:inputType="textEmailAddress"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/emailEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/WhiteLineEditText"/>
+                <TextView
+                    android:ellipsize="end"
+                    android:id="@+id/txtPassw"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="4dp"
+                    android:singleLine="true"
+                    android:text="@string/msgPassw"
+                    style="@style/txtConcertOneregular16" tools:text="@string/msgPassw"/>
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:autofillHints=""
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/emailEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    style="@style/WhiteLineEditText"/>
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/imageIconuser"
+                android:layout_gravity="top|center"
+                android:layout_width="105dp"
+                android:layout_height="100dp"
+                android:paddingBottom="40dp"
+                android:scaleType="centerInside"
+                tools:src="@drawable/imgiconuser"/>
+        </FrameLayout>
 
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/emailEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="135dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/txtbtsign_in"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/btnSolidRounded" tools:text="@string/txtbtsign_in"/>
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="SIGN IN"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Crear una cuenta"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/txtplainlogin"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:singleLine="true"
+            android:text="@string/msgplainlogin"
+            style="@style/txtConcertOneregular16blk" tools:text="@string/msgplainlogin"/>
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/txtbtcrear_una_cuenta"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/loginButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/btnWhite" tools:text="@string/txtbtcrear_una_cuenta"/>
     </LinearLayout>
 </layout>
