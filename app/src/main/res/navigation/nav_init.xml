@@ -54,10 +54,13 @@
         android:id="@+id/deliveryFragment"
         android:name="com.equipouno.app.view.fragment.DeliveryFragment"
         android:label="DeliveryFragment"
-        tools:layout="@layout/fragment_delevery">
+        tools:layout="@layout/fragment_delivery">
         <argument
             android:name="recipeName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_deliveryFragment_to_typesFoodFragment"
+            app:destination="@id/typesFoodFragment" />
     </fragment>
 
     <fragment
@@ -83,11 +86,11 @@
             android:id="@+id/action_typesFoodFragment_to_recipesFragment"
             app:destination="@id/recipesFragment" />
         <action
-            android:id="@+id/action_typesFoodFragment_to_deleveryFavFragment"
-            app:destination="@id/deleveryFavFragment" />
-        <action
             android:id="@+id/action_typesFoodFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_typesFoodFragment_to_deleveryFavFragment"
+            app:destination="@id/deleveryFavFragment" />
     </fragment>
 
     <dialog

@@ -1,6 +1,7 @@
 package com.equipouno.app.view.fragment
 
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,11 @@ class TypesFoodFragment : Fragment() {
         val email_ = arguments?.getString("email")
         if (email_ != null) {
             this.observeUserData(email_)
+            val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+            with(sharedPref?.edit()) {
+                this?.putString("user_email", email_)
+                this?.apply()
+            }
         }
     }
 

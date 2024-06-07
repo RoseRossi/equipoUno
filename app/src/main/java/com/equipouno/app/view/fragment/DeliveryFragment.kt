@@ -12,18 +12,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.equipouno.app.R
-import com.equipouno.app.databinding.FragmentDeleveryBinding
+import com.equipouno.app.databinding.FragmentDeliveryBinding
 import com.equipouno.app.viewmodel.UserModel
 
 class DeliveryFragment : Fragment() {
-    private lateinit var binding: FragmentDeleveryBinding
+    private lateinit var binding: FragmentDeliveryBinding
     private val userViewModel: UserModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDeleveryBinding.inflate(inflater, container, false)
+        binding = FragmentDeliveryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
