@@ -43,9 +43,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre del Usuario"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/blue_text_primary"
+                    android:textStyle="bold"
                     android:gravity="center_vertical"
-                    android:textSize="16sp"
+                    android:textSize="18sp"
                     android:paddingEnd="8dp"/>
 
                 <ImageButton
@@ -82,13 +83,11 @@
             android:padding="16dp"
             android:gravity="center"
             android:text="@string/piquant"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blue_text_primary"
+            android:textStyle="bold"
             android:background="@color/blue_primary"
-            android:drawableTop="@drawable/piquant"
-            android:drawablePadding="8dp"
-            android:scaleType="matrix"
-            android:maxWidth="100dp"
-            android:maxHeight="100dp"/>
+            android:drawableTop="@drawable/postres"
+            android:drawablePadding="8dp" />
 
         <Button
             android:layout_width="0dp"
@@ -99,9 +98,10 @@
             android:background="@color/blue_primary"
             android:padding="16dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blue_text_primary"
+            android:textStyle="bold"
             android:text="@string/bitter"
-            android:drawableTop="@drawable/sabor1"
+            android:drawableTop="@drawable/mexicana"
             android:drawablePadding="8dp"/>
 
         <Button
@@ -113,7 +113,8 @@
             android:background="@color/blue_primary"
             android:padding="16dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blue_text_primary"
+            android:textStyle="bold"
             android:text="@string/swet"
             android:drawableTop="@drawable/sabor1"
             android:drawablePadding="8dp"/>
@@ -127,9 +128,10 @@
             android:background="@color/blue_primary"
             android:padding="16dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blue_text_primary"
+            android:textStyle="bold"
             android:text="@string/mealty"
-            android:drawableTop="@drawable/sabor1"
+            android:drawableTop="@drawable/asiatica"
             android:drawablePadding="8dp"/>
 
         <Button
@@ -141,9 +143,10 @@
             android:background="@color/blue_primary"
             android:padding="16dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blue_text_primary"
+            android:textStyle="bold"
             android:text="@string/salty"
-            android:drawableTop="@drawable/sabor1"
+            android:drawableTop="@drawable/panaderia"
             android:drawablePadding="8dp"/>
 
         <Button
@@ -155,9 +158,10 @@
             android:background="@color/blue_primary"
             android:padding="16dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@color/blue_text_primary"
+            android:textStyle="bold"
             android:text="@string/sout"
-            android:drawableTop="@drawable/sabor1"
+            android:drawableTop="@drawable/vegetariana"
             android:drawablePadding="8dp"/>
 
     </GridLayout>
