@@ -34,4 +34,11 @@
     <string name="sout">Vegetariana</string>
     <string name="log_out">Log out</string>
     <string name="my_recipes_fav">My recipes Fav</string>
+
+    <string name="mi_perfil">Mi Perfil</string>
+    <string name="favoritos">favoritos</string>
+    <string name="celular">Celular</string>
+    <string name="direccion">Dirección</string>
+    <string name="correo_electronico">Correo Electrónico</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
 </resources>

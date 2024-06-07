@@ -52,7 +52,10 @@ class TypesFoodFragment : Fragment() {
 
     private fun listeners() {
         binding.profileButton.setOnClickListener {
-            findNavController().navigate(R.id.action_typesFoodFragment_to_profileFragment)
+            val bundle = Bundle().apply {
+                putString("email", arguments?.getString("email"))
+            }
+            findNavController().navigate(R.id.action_typesFoodFragment_to_profileFragment, bundle)
         }
 
         binding.logOut.setOnClickListener {

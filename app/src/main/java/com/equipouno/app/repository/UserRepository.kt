@@ -30,5 +30,28 @@ class UserRepository {
 
         return userLiveData
     }
+
+    fun updateUser(user: User) {
+        val userCollection = db.collection("person")
+        userCollection.whereEqualTo("email", user.email)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    val documentId = querySnapshot.documents[0].id
+                    userCollection.document(documentId).set(user)
+                        .addOnSuccessListener {
+                            // Success handling if needed
+                        }
+                        .addOnFailureListener { exception ->
+
+                            println("Error updating user: ${exception.message}")
+                        }
+                }
+            }
+            .addOnFailureListener { exception ->
+
+                println("Error fetching user for update: ${exception.message}")
+            }
+    }
 }
 
