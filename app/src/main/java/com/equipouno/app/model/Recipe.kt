@@ -1,7 +1,7 @@
 package com.equipouno.app.model
 
 data class Recipe(
-    val id: String = "", // ID asignado por Firestore
+    val id: String = "",
     val name: String = "",
     val type: String = "",
     val ingredients: List<String> = emptyList(),

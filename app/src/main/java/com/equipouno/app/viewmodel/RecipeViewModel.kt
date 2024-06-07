@@ -32,6 +32,14 @@ class RecipeViewModel @Inject constructor(
         return recipe
     }
 
+    fun getRecipeByName(name: String): LiveData<Recipe?> {
+        val recipe = MutableLiveData<Recipe?>()
+        viewModelScope.launch {
+            recipe.value = recipeRepository.getRecipeByName(name)
+        }
+        return recipe
+    }
+
     fun addRecipe(recipe: Recipe) {
         viewModelScope.launch {
             val isSuccess = recipeRepository.addRecipe(recipe)
