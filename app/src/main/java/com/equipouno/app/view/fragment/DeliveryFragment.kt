@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.equipouno.app.R
 import com.equipouno.app.databinding.FragmentDeliveryBinding
 import com.equipouno.app.viewmodel.UserModel
@@ -46,6 +47,12 @@ class DeliveryFragment : Fragment() {
         binding.deliveryButton.setOnClickListener {
             val dialog = DeliveryConfirmationDialog()
             dialog.show(parentFragmentManager, "DeliveryConfirmationDialog")
+        }
+
+        // Configura el OnClickListener para el back_icon
+        binding.backIcon.setOnClickListener {
+            // Navega de vuelta a TypesFoodFragment
+            findNavController().navigate(R.id.action_deliveryFragment_to_typesFoodFragment)
         }
     }
 

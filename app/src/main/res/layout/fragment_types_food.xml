@@ -216,8 +216,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/my_recipes_fav"
-                android:backgroundTint="@color/blue_primary"
+                android:background="@drawable/button_rounded"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:textColor="@android:color/white"
+                android:fontFamily="@font/concert_one"
+                android:textSize="18sp"
                 android:layout_marginBottom="20dp"
                 />
 
@@ -225,8 +229,12 @@
                 android:id="@+id/log_out"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="@string/log_out"
-                android:backgroundTint="@color/blue_primary"
+                android:fontFamily="@font/concert_one"
+                android:textSize="18sp"
+                android:background="@drawable/button_rounded"
                 android:textColor="@android:color/white"
                 />
         </LinearLayout>

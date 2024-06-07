@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.equipouno.app.R
 import com.equipouno.app.databinding.FragmentProfileBinding
 import com.equipouno.app.model.User
 import com.equipouno.app.viewmodel.UserModel
@@ -39,6 +41,12 @@ class ProfileFragment : Fragment() {
 
         binding.editButton.setOnClickListener {
             toggleEditMode()
+        }
+
+        // Configura el OnClickListener para el back_icon
+        binding.backIcon.setOnClickListener {
+            // Navega de vuelta a TypesFoodFragment
+            findNavController().navigate(R.id.action_profileFragment_to_typesFoodFragment)
         }
     }
 
