@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_typesFoodFragment"
+            app:destination="@id/typesFoodFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -42,7 +45,11 @@
         android:id="@+id/recipeDetailFragment"
         android:name="com.equipouno.app.view.fragment.RecipeDetailFragment"
         android:label="RecipeDetailFragment"
-        tools:layout="@layout/fragment_recipe_detail"/>
+        tools:layout="@layout/fragment_recipe_detail">
+        <action
+            android:id="@+id/action_recipeDetailFragment_to_deleveryFragment"
+            app:destination="@id/deleveryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.equipouno.app.view.fragment.RecipesFragment"
@@ -52,6 +59,19 @@
         android:id="@+id/typesFoodFragment"
         android:name="com.equipouno.app.view.fragment.TypesFoodFragment"
         android:label="TypesFoodFragment"
-        tools:layout="@layout/fragment_types_food"/>
+        tools:layout="@layout/fragment_types_food">
+        <action
+            android:id="@+id/action_typesFoodFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_typesFoodFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_typesFoodFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_typesFoodFragment_to_deleveryFavFragment"
+            app:destination="@id/deleveryFavFragment" />
+    </fragment>
 
 </navigation>

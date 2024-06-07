@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-//import androidx.navigation.fragment.navArgs
+import androidx.lifecycle.Observer
 import com.equipouno.app.databinding.FragmentRecipeDetailBinding
 import com.equipouno.app.viewmodel.RecipeViewModel
 import dagger.hilt.android.AndroidEntryPoint
