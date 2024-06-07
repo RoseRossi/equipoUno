@@ -1,6 +1,8 @@
 package com.equipouno.app.view.fragment
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -9,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.equipouno.app.R
 import com.equipouno.app.databinding.FragmentDeleveryBinding
 import com.equipouno.app.viewmodel.UserModel
@@ -29,15 +30,15 @@ class DeliveryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val userEmail = "user@example.com"
+        // Obtener el email del usuario desde SharedPreferences (o alguna otra fuente)
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        val email = sharedPref?.getString("user_email", null)
 
-        userViewModel.getUserByEmail(userEmail).observe(viewLifecycleOwner, Observer { user ->
-            user?.let {
-                binding.fieldNameValue.text = it.name
-                binding.fieldAddressValue.text = it.address
-                binding.fieldPhoneValue.text = it.tel
-            }
-        })
+        if (email != null) {
+            observeUserData(email)
+        } else {
+            Log.e("DeliveryFragment", "No email found")
+        }
 
         val selectedIngredients = arguments?.getStringArrayList("selectedIngredients")
         displaySelectedIngredients(selectedIngredients)
@@ -46,6 +47,16 @@ class DeliveryFragment : Fragment() {
             val dialog = DeliveryConfirmationDialog()
             dialog.show(parentFragmentManager, "DeliveryConfirmationDialog")
         }
+    }
+
+    private fun observeUserData(email: String) {
+        userViewModel.getUserByEmail(email).observe(viewLifecycleOwner, Observer { user ->
+            user?.let {
+                binding.fieldNameValue.text = it.name
+                binding.fieldAddressValue.text = it.address
+                binding.fieldPhoneValue.text = it.tel
+            }
+        })
     }
 
     private fun displaySelectedIngredients(selectedIngredients: List<String>?) {

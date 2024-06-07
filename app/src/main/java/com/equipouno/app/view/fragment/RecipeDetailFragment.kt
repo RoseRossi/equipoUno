@@ -53,9 +53,9 @@ class RecipeDetailFragment : Fragment() {
                     }
 
                     binding.collapsibleContentSteps.removeAllViews()
-                    it.steps.forEach { step ->
+                    it.steps.forEachIndexed { index, step ->
                         val textView = TextView(context).apply {
-                            text = step
+                            text = "${index + 1}. $step"
                         }
                         binding.collapsibleContentSteps.addView(textView)
                     }
@@ -71,7 +71,6 @@ class RecipeDetailFragment : Fragment() {
         binding.deliveryButton.setOnClickListener {
             val selectedIngredients = getSelectedIngredients()
             val bundle = Bundle().apply {
-                putString("recipeName", recipeName)
                 putStringArrayList("selectedIngredients", ArrayList(selectedIngredients))
             }
             findNavController().navigate(R.id.action_recipeDetailFragment_to_deleveryFragment, bundle)
@@ -93,10 +92,10 @@ class RecipeDetailFragment : Fragment() {
     }
 
     private fun setupCollapsibleButtons() {
-        binding.headerIngredients.setOnClickListener {
+        binding.headerIngredientsNew.setOnClickListener {
             toggleSection(binding.collapsibleContentIngredients, binding.arrowIconIngredients)
         }
-        binding.headerSteps.setOnClickListener {
+        binding.headerStepsNew.setOnClickListener {
             toggleSection(binding.collapsibleContentSteps, binding.arrowIconSteps)
         }
     }

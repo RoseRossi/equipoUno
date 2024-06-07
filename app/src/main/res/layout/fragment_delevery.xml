@@ -43,7 +43,6 @@
                 android:textSize="30sp" />
         </androidx.appcompat.widget.Toolbar>
 
-        <!-- Título de la descripción -->
         <TextView
             android:id="@+id/description_title"
             android:layout_width="0dp"
@@ -58,7 +57,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
-        <!-- CardView para los campos de información del usuario -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_user_info"
             android:layout_width="0dp"
@@ -112,8 +110,7 @@
                     android:layout_marginBottom="4dp"
                     android:text="Dirección"
                     android:textColor="#4B5F83"
-                    android:textSize="18sp"
-                    />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/field_address_value"
@@ -148,16 +145,9 @@
                     android:text="Celular actual"
                     android:textColor="#4B5F83"
                     android:textSize="16sp" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#B0BEC5"
-                    android:layout_marginBottom="8dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Texto para Ingredientes seleccionados -->
         <TextView
             android:id="@+id/selected_ingredients_title"
             android:layout_width="0dp"
@@ -172,7 +162,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
-        <!-- CardView para los ingredientes -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_ingredients"
             android:layout_width="0dp"
@@ -193,13 +182,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp">
-
-                <!-- Los ingredientes se añadirán dinámicamente aquí -->
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Botón Delivery -->
         <Button
             android:id="@+id/delivery_button"
             android:layout_width="wrap_content"
