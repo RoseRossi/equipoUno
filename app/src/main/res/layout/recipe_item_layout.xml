@@ -34,6 +34,7 @@
         android:layout_gravity="center_vertical"/>
 
     <CheckBox
+
         android:id="@+id/Check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
         android:textColor="#ccc"
         android:clickable="true"
         android:focusable="true"
-        android:button="@drawable/check"/>
+        android:button="@drawable/check"
+        />
 
 </LinearLayout>
