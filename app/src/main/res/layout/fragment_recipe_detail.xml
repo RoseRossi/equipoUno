@@ -45,17 +45,6 @@
                 android:textSize="30sp" />
         </androidx.appcompat.widget.Toolbar>
 
-        <!-- Imagen de la receta -->
-        <ImageView
-            android:id="@+id/recipeImage"
-            android:layout_width="231dp"
-            android:layout_height="124dp"
-            android:layout_margin="16dp"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
-
         <!-- Título de la descripción -->
         <TextView
             android:id="@+id/description_title"
@@ -67,7 +56,7 @@
             android:textSize="30sp"
             android:fontFamily="@font/concert_one"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/recipeImage"
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
@@ -90,7 +79,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/collapsible_card_ingredients"
             android:layout_width="380dp"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
             app:cardBackgroundColor="#AAE8FC"
@@ -151,7 +140,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/collapsible_card_steps"
             android:layout_width="380dp"
-            android:layout_height="54dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
             app:cardBackgroundColor="#AAE8FC"
