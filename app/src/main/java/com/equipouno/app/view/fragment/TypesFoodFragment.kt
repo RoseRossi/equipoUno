@@ -42,7 +42,6 @@ class TypesFoodFragment : Fragment() {
         if (email_ != null) {
             this.observeUserData(email_)
         }
-        Toast.makeText( context, email_, Toast.LENGTH_SHORT).show()
     }
 
     private fun listeners() {
