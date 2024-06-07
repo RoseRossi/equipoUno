@@ -13,12 +13,12 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="piquant">Piquant</string>
-    <string name="bitter">Bitter</string>
-    <string name="swet">Swet</string>
-    <string name="mealty">Mealty</string>
-    <string name="salty">Salty</string>
-    <string name="sout">Sout</string>
+    <string name="piquant">Postres</string>
+    <string name="bitter">Mexicana</string>
+    <string name="swet">Italiana</string>
+    <string name="mealty">Asiatica</string>
+    <string name="salty">Panadería</string>
+    <string name="sout">Vegetariana</string>
     <string name="log_out">Log out</string>
     <string name="my_recipes_fav">My recipes Fav</string>
 </resources>
