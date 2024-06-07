@@ -188,55 +188,14 @@
             app:layout_constraintRight_toRightOf="parent">
 
             <LinearLayout
+                android:id="@+id/card_ingredients_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <TextView
-                    android:id="@+id/ingredient_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="• 170 gramos de espaguetis"
-                    android:textColor="#4B5F83"
-                    android:textSize="18sp" />
+                <!-- Los ingredientes se añadirán dinámicamente aquí -->
 
-                <TextView
-                    android:id="@+id/ingredient_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="• 50 gramos de queso pecorino"
-                    android:textColor="#4B5F83"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/ingredient_3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="• 2 yemas de huevo"
-                    android:textColor="#4B5F83"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/ingredient_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="• 100 gramos de panceta"
-                    android:textColor="#4B5F83"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/ingredient_5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="• Pimienta negra molida"
-                    android:textColor="#4B5F83"
-                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

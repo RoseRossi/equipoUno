@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.equipouno.app.R
 import com.equipouno.app.model.Recipe
 
-class ListRecipesAdapater(private val recipes: List<Recipe>, private val onItemClick: (Recipe) -> Unit) :
-    RecyclerView.Adapter<ListRecipesAdapater.RecipeViewHolder>() {
+class ListRecipesAdapter(private val recipes: List<Recipe>, private val onItemClick: (Recipe) -> Unit) :
+    RecyclerView.Adapter<ListRecipesAdapter.RecipeViewHolder>() {
 
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val recipeName: TextView = itemView.findViewById(R.id.recipeName)
