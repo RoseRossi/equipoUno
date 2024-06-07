@@ -1,8 +1,6 @@
 package com.equipouno.app.di
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.equipouno.app.api.ApiClient
-import com.equipouno.app.api.ApiService
 import com.equipouno.app.repository.RecipeRepository
 import dagger.Module
 import dagger.Provides
@@ -17,18 +15,14 @@ object AppModule {
     @Provides
     @Singleton
     fun provideFirestoreInstance(): FirebaseFirestore {
+        // Proporciona una instancia de FirebaseFirestore que se puede inyectar en toda la aplicación
         return FirebaseFirestore.getInstance()
     }
 
     @Provides
     @Singleton
-    fun provideApiService(): ApiService {
-        return ApiClient.apiService
-    }
-
-    @Provides
-    @Singleton
-    fun provideRecipeRepository(apiService: ApiService, firestore: FirebaseFirestore): RecipeRepository {
-        return RecipeRepository(apiService, firestore)
+    fun provideRecipeRepository(firestore: FirebaseFirestore): RecipeRepository {
+        // Proporciona una instancia de RecipeRepository utilizando Firestore
+        return RecipeRepository(firestore)
     }
 }
