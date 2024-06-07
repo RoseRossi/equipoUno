@@ -87,6 +87,7 @@
             android:textStyle="bold"
             android:background="@color/blue_primary"
             android:drawableTop="@drawable/postres"
+            android:tag="Postres"
             android:drawablePadding="8dp" />
 
         <Button
@@ -101,6 +102,7 @@
             android:textColor="@color/blue_text_primary"
             android:textStyle="bold"
             android:text="@string/bitter"
+            android:tag="Mexicana"
             android:drawableTop="@drawable/mexicana"
             android:drawablePadding="8dp"/>
 
@@ -116,6 +118,7 @@
             android:textColor="@color/blue_text_primary"
             android:textStyle="bold"
             android:text="@string/swet"
+            android:tag="Italiana"
             android:drawableTop="@drawable/sabor1"
             android:drawablePadding="8dp"/>
 
@@ -131,6 +134,7 @@
             android:textColor="@color/blue_text_primary"
             android:textStyle="bold"
             android:text="@string/mealty"
+            android:tag="Asiática"
             android:drawableTop="@drawable/asiatica"
             android:drawablePadding="8dp"/>
 
@@ -147,6 +151,7 @@
             android:textStyle="bold"
             android:text="@string/salty"
             android:drawableTop="@drawable/panaderia"
+            android:tag="Panadería"
             android:drawablePadding="8dp"/>
 
         <Button
@@ -161,6 +166,7 @@
             android:textColor="@color/blue_text_primary"
             android:textStyle="bold"
             android:text="@string/sout"
+            android:tag="Vegetariana"
             android:drawableTop="@drawable/vegetariana"
             android:drawablePadding="8dp"/>
 

@@ -97,6 +97,7 @@ dependencies {
     // Remover temporalmente esta dependencia para verificar compatibilidad
     // implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     // kapt("androidx.hilt:hilt-compiler:1.0.0")
+//    implementation(libs.material3)
 
     // Firestore y Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
