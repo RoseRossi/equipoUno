@@ -36,20 +36,30 @@
         android:name="com.equipouno.app.view.fragment.DeleveryFavFragment"
         android:label="DeleveryFavFragment"
         tools:layout="@layout/fragment_delevery_fav"/>
-    <fragment
-        android:id="@+id/deleveryFragment"
-        android:name="com.equipouno.app.view.fragment.DeleveryFragment"
-        android:label="DeleveryFragment"
-        tools:layout="@layout/fragment_delevery"/>
+
     <fragment
         android:id="@+id/recipeDetailFragment"
         android:name="com.equipouno.app.view.fragment.RecipeDetailFragment"
         android:label="RecipeDetailFragment"
         tools:layout="@layout/fragment_recipe_detail">
+        <argument
+            android:name="recipeName"
+            app:argType="string" />
         <action
             android:id="@+id/action_recipeDetailFragment_to_deleveryFragment"
-            app:destination="@id/deleveryFragment" />
+            app:destination="@id/deliveryFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="com.equipouno.app.view.fragment.DeliveryFragment"
+        android:label="DeliveryFragment"
+        tools:layout="@layout/fragment_delevery">
+        <argument
+            android:name="recipeName"
+            app:argType="string" />
+    </fragment>
+
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.equipouno.app.view.fragment.RecipesFragment"
@@ -59,6 +69,8 @@
             android:id="@+id/action_recipesFragment_to_recipeDetailFragment"
             app:destination="@id/recipeDetailFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/typesFoodFragment"
         android:name="com.equipouno.app.view.fragment.TypesFoodFragment"
@@ -77,5 +89,16 @@
             android:id="@+id/action_typesFoodFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+
+    <dialog
+        android:id="@+id/deliveryConfirmationDialog"
+        android:name="com.equipouno.app.view.fragment.DeliveryConfirmationDialog"
+        android:label="Delivery Confirmation Dialog"
+        tools:layout="@layout/fragment_delivery_confirmation_dialog">
+        <action
+            android:id="@+id/action_deliveryConfirmationDialog_to_typesFoodFragment"
+            app:destination="@id/typesFoodFragment" />
+    </dialog>
+
 
 </navigation>

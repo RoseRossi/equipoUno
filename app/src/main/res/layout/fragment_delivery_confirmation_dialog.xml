@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/dialog_background"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Su pedido llegará pronto"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar"
+        android:background="@drawable/button_rounded"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

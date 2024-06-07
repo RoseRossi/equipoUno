@@ -28,6 +28,19 @@ class RecipeRepository @Inject constructor(
         }
     }
 
+    suspend fun getRecipeByName(name: String): Recipe? {
+        return try {
+            val snapshot = recipesCollection.whereEqualTo("name", name).get().await()
+            if (snapshot.documents.isNotEmpty()) {
+                snapshot.documents[0].toObject(Recipe::class.java)
+            } else {
+                null
+            }
+        } catch (e: Exception) {
+            null
+        }
+    }
+
     suspend fun addRecipe(recipe: Recipe): Boolean {
         return try {
             recipesCollection.add(recipe).await()
