@@ -96,11 +96,11 @@
                 <!-- Título del botón desplegable Ingredientes -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_height="51dp"
                     android:background="@drawable/rounded_description"
-                    android:padding="16dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/collapsible_title_ingredients"
@@ -157,11 +157,11 @@
                 <!-- Título del botón desplegable Pasos -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:layout_height="56dp"
                     android:background="@drawable/rounded_description"
-                    android:padding="16dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
 
                     <TextView
                         android:id="@+id/collapsible_title_steps"
@@ -205,12 +205,12 @@
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:drawableLeft="@drawable/delivery_icon_false"
+            android:drawableLeft="@drawable/delivery_icon"
             android:text="Delivery"
             android:padding="16dp"
             android:gravity="center_vertical"
             android:background="@drawable/button_rounded"
-            android:textColor="#FFFFFF"
+            android:textColor="#F6F3E4"
             android:fontFamily="@font/concert_one"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/collapsible_card_steps"
