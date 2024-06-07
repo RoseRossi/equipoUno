@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,10 +15,14 @@ import com.equipouno.app.databinding.FragmentRecipesBinding
 import com.equipouno.app.model.Recipe
 import com.equipouno.app.view.adapter.ListRecipesAdapter
 import com.equipouno.app.viewmodel.RecipeListModel
+import com.equipouno.app.viewmodel.UserModel
 
 class RecipesFragment : Fragment() {
     private lateinit var binding: FragmentRecipesBinding
     val viewModel: RecipeListModel by viewModels()
+    private val userViewModel: UserModel by viewModels()
+    private var overlayContainer: ConstraintLayout? = null
+    private var overlay: View? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +40,49 @@ class RecipesFragment : Fragment() {
 
         if (type_ != null && name_ != null) {
             this.updateListRecipes(type_)
+            binding.titleTextView.setText(type_)
+            binding.profileName.text = name_
         }
+
+        // Listener
+        this.listeners()
+        this.handlerHamburger()
+    }
+
+    private fun listeners() {
+        binding.profileButton.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_profileFragment)
+        }
+
+        binding.logOut.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_nav_home)
+        }
+
+        binding.favRecipes.setOnClickListener {
+            findNavController().navigate(R.id.action_recipesFragment_to_deleveryFavFragment)
+        }
+    }
+
+    private fun handlerHamburger() {
+        binding.menuButton.setOnClickListener { toggleOverlay() }
+        overlayContainer = binding.overlayContainer
+        overlay = binding.overlay
+        overlay?.setOnClickListener { hideOverlay() }
+    }
+
+    private fun toggleOverlay() {
+        if (overlayContainer?.visibility == View.VISIBLE) {
+            overlayContainer?.visibility = View.GONE
+            overlay?.visibility = View.GONE
+        } else {
+            overlayContainer?.visibility = View.VISIBLE
+            overlay?.visibility = View.VISIBLE
+        }
+    }
+
+    private fun hideOverlay() {
+        overlayContainer?.visibility = View.GONE
+        overlay?.visibility = View.GONE
     }
 
     private fun updateListRecipes(type: String) {
@@ -43,7 +90,6 @@ class RecipesFragment : Fragment() {
             val recyclerView = binding.recyclerViewRecipes
             val adapter = ListRecipesAdapter(recipes) { recipe ->
                 val bundle = Bundle().apply {
-                    putString("recipeName", recipe.name)
                     putString("recipeName", recipe.name)
                 }
                 Log.d("RecipesFragment", "Navigating to RecipeDetailFragment with recipeName: ${recipe.name}")
