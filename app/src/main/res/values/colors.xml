@@ -13,4 +13,7 @@
     <color name="blue_gray_900">#1c2b3e</color>
     <color name="white_A700">#ffffff</color>
     <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="blue_primary">#AAE8FC</color>
+    <color name="blue_text_primary">#4B5F83</color>
 </resources>

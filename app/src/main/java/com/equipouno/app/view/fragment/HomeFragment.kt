@@ -47,8 +47,10 @@ class HomeFragment : Fragment() {
         val pass = binding.passwordEditText.text.toString()
         loginViewModel.loginUser(email,pass){ isLogin ->
             if (isLogin){
-                // Aqui va un nav @pau
-                Toast.makeText( context, "Todo Bien", Toast.LENGTH_SHORT).show()
+                val bundle = Bundle().apply {
+                    putString("email", email)
+                }
+                findNavController().navigate(R.id.action_nav_home_to_typesFoodFragment, bundle)
             }else {
                 Toast.makeText( context, "Login incorrecto", Toast.LENGTH_SHORT).show()
             }
