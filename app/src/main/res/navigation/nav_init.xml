@@ -54,7 +54,11 @@
         android:id="@+id/recipesFragment"
         android:name="com.equipouno.app.view.fragment.RecipesFragment"
         android:label="RecipesFragment"
-        tools:layout="@layout/fragment_recipes"/>
+        tools:layout="@layout/fragment_recipes">
+        <action
+            android:id="@+id/action_recipesFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/typesFoodFragment"
         android:name="com.equipouno.app.view.fragment.TypesFoodFragment"
@@ -64,14 +68,14 @@
             android:id="@+id/action_typesFoodFragment_to_nav_home"
             app:destination="@id/nav_home" />
         <action
-            android:id="@+id/action_typesFoodFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-        <action
             android:id="@+id/action_typesFoodFragment_to_recipesFragment"
             app:destination="@id/recipesFragment" />
         <action
             android:id="@+id/action_typesFoodFragment_to_deleveryFavFragment"
             app:destination="@id/deleveryFavFragment" />
+        <action
+            android:id="@+id/action_typesFoodFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
 </navigation>

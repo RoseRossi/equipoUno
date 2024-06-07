@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,6 +21,7 @@ class TypesFoodFragment : Fragment() {
     private val userViewModel: UserModel by viewModels()
     private var overlayContainer: ConstraintLayout? = null
     private var overlay: View? = null
+    private var nameUser = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -89,15 +89,22 @@ class TypesFoodFragment : Fragment() {
 
             if (child is Button) {
                 child.setOnClickListener {
-                    findNavController().navigate(R.id.action_typesFoodFragment_to_recipesFragment)
+                    val buttonInfo = child.tag as? String
+                    val bundle = Bundle().apply {
+                        putString("type", buttonInfo)
+                        putString("name", nameUser)
+                    }
+                    findNavController().navigate(R.id.action_typesFoodFragment_to_recipesFragment, bundle)
                 }
             }
         }
     }
+
     private fun observeUserData(email: String) {
         userViewModel.getUserByEmail(email).observe(viewLifecycleOwner) { user ->
             user?.let { userData ->
                 binding.profileName.text = userData.name
+                nameUser = userData.name
             }
         }
     }
