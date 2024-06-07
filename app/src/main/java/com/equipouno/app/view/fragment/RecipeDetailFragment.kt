@@ -76,6 +76,12 @@ class RecipeDetailFragment : Fragment() {
             findNavController().navigate(R.id.action_recipeDetailFragment_to_deleveryFragment, bundle)
         }
 
+        // Configura el OnClickListener para el back_icon
+        binding.backIcon.setOnClickListener {
+            // Navega de vuelta a TypesFoodFragment
+            findNavController().navigate(R.id.action_recipeDetailFragment_to_typesFoodFragment)
+        }
+
         // Configurar los botones colapsables
         setupCollapsibleButtons()
     }

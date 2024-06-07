@@ -11,7 +11,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="-1dp">
 
         <!-- Header Layout -->
         <androidx.appcompat.widget.Toolbar
@@ -77,21 +79,21 @@
                 android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
                 android:gravity="center"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
                 android:text="Usuario"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/nameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
                 android:gravity="center"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
-                android:fontFamily="@font/concert_one"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </LinearLayout>
 
         <!-- Phone and Address Display and Edit Layout -->
@@ -99,8 +101,8 @@
             android:id="@+id/contactRectangle"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="28dp"
             android:background="@drawable/button_rounded"
             android:orientation="vertical"
             android:padding="16dp"
@@ -111,54 +113,54 @@
                 android:id="@+id/phoneLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
                 android:text="@string/celular"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/phoneTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/concert_one"
                 android:text="celular del usuario"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/phoneEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@android:color/white"
                 android:fontFamily="@font/concert_one"
-                android:visibility="gone"/>
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/addressLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:fontFamily="@font/concert_one"
                 android:text="@string/direccion"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/addressTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/concert_one"
                 android:text="direccion del usuario"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/addressEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@android:color/white"
                 android:fontFamily="@font/concert_one"
-                android:visibility="gone"/>
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
         </LinearLayout>
 
         <!-- Email and Birthdate Display and Edit Layout -->
@@ -166,7 +168,7 @@
             android:id="@+id/emailBirthdateRectangle"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
+            android:layout_marginStart="68dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/button_rounded"
             android:orientation="vertical"
@@ -178,54 +180,54 @@
                 android:id="@+id/emailLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/concert_one"
                 android:text="@string/correo_electronico"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/emailTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/concert_one"
                 android:text="correo del usuario"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/emailEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@android:color/white"
                 android:fontFamily="@font/concert_one"
-                android:visibility="gone"/>
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/birthdateLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/concert_one"
                 android:text="@string/fecha_nacimiento"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/birthdateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/concert_one"
                 android:text="fecha de nacimiento del usuario"
-                android:textColor="@android:color/white"
-                android:fontFamily="@font/concert_one"/>
+                android:textColor="@android:color/white" />
 
             <EditText
                 android:id="@+id/birthdateEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@android:color/white"
                 android:fontFamily="@font/concert_one"
-                android:visibility="gone"/>
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
         </LinearLayout>
 
         <!-- Edit Button -->
