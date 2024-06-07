@@ -1,20 +1,25 @@
 package com.equipouno.app.view.fragment
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.GridLayout
-import android.widget.ImageButton
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.equipouno.app.R
 import com.equipouno.app.databinding.FragmentTypesFoodBinding
+import com.equipouno.app.viewmodel.UserModel
+
 
 class TypesFoodFragment : Fragment() {
     private lateinit var binding: FragmentTypesFoodBinding
+    private val userViewModel: UserModel by viewModels()
     private var overlayContainer: ConstraintLayout? = null
     private var overlay: View? = null
 
@@ -31,6 +36,13 @@ class TypesFoodFragment : Fragment() {
         this.listeners()
         this.handlerHamburger()
         this.handlerRecipesListener()
+
+        // Get Data Bunble
+        val email_ = arguments?.getString("email")
+        if (email_ != null) {
+            this.observeUserData(email_)
+        }
+        Toast.makeText( context, email_, Toast.LENGTH_SHORT).show()
     }
 
     private fun listeners() {
@@ -83,4 +95,12 @@ class TypesFoodFragment : Fragment() {
             }
         }
     }
+    private fun observeUserData(email: String) {
+        userViewModel.getUserByEmail(email).observe(viewLifecycleOwner) { user ->
+            user?.let { userData ->
+                binding.profileName.text = userData.name
+            }
+        }
+    }
+
 }
